@@ -1,6 +1,15 @@
-﻿@model CanIHazDadJoke.Models.DadJoke
+﻿@*@model CanIHazDadJoke.Models.DadJoke
 @{
     ViewData["Title"] = "Home Page";
 }
 
-<h3>@Model.Joke</h3>
+<h3>@Model.Joke</h3>*@
+
+
+@model CanIHazDadJoke.Models.SearchModel
+
+    <form asp-action="Index" asp-controller="Home">
+        <label asp-for="SearchTerm"></label>
+        <input asp-for="SearchTerm" placeholder="type search term here" />
+        <input type="submit" />
+    </form>

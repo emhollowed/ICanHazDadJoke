@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using CanIHazDadJoke.Models;
 using RestSharp;
 using Newtonsoft.Json;
+using System;
 
 namespace CanIHazDadJoke.Controllers
 {
@@ -19,7 +20,19 @@ namespace CanIHazDadJoke.Controllers
 
             this.HttpContext.Response.Headers.Add("refresh", "10; url=" + Url.Action("index"));
 
-            return View(joke);
+            return View();
+           // return View(joke);
+        }
+
+        [HttpPost, ValidateAntiForgeryToken]
+        public IActionResult Index(SearchModel model)
+        {
+            return Content($"Hello {model.SearchTerm}");
+        }
+
+        private string BuildJokeSearchRequest(string searchTerm)
+        {
+            return $"https://icanhazdadjoke.com/search?page=1&limit=30&term={searchTerm}";
         }
 
 
