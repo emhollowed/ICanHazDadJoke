@@ -4,6 +4,7 @@ using CanIHazDadJoke.Models;
 using RestSharp;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 
 namespace CanIHazDadJoke.Controllers
 {
@@ -25,9 +26,15 @@ namespace CanIHazDadJoke.Controllers
         }
 
         [HttpPost, ValidateAntiForgeryToken]
-        public IActionResult Index(SearchModel model)
+        public IActionResult Index(SearchModel search)
         {
-            return Content($"Hello {model.SearchTerm}");
+            var client = new RestClient(BuildJokeSearchRequest(search.SearchTerm));
+            var request = new RestRequest("/", Method.GET);
+
+            IRestResponse response = client.Execute(request);
+            var joke = JsonConvert.DeserializeObject<JokeSearchResults>(response.Content);
+
+            return View(joke);
         }
 
         private string BuildJokeSearchRequest(string searchTerm)
