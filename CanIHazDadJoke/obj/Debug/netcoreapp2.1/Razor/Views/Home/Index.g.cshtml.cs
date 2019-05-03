@@ -73,12 +73,12 @@ using CanIHazDadJoke.Models;
             WriteLiteral("</p>\r\n</div>\r\n\r\n<div id=\"jokeSearch\">\r\n\r\n    ");
             EndContext();
             BeginContext(187, 354, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dfc96eafd2b244f6949ba09735f10a67", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c06d5f0ac6e64e47ad16b1ff1b83a215", async() => {
                 BeginContext(332, 68, true);
                 WriteLiteral("\r\n        <i class=\"fas fa-search\" aria-hidden=\"true\"></i>\r\n        ");
                 EndContext();
                 BeginContext(400, 128, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d2b45f03fe374cab8c7b63f04faf930c", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "e7931d2bd3b34fc0be089a9b843815dc", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();

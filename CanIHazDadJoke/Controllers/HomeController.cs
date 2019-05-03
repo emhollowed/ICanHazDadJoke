@@ -2,6 +2,7 @@
 using CanIHazDadJoke.Models;
 using RestSharp;
 using Newtonsoft.Json;
+using System.Linq;
 
 namespace CanIHazDadJoke.Controllers
 {
@@ -12,15 +13,22 @@ namespace CanIHazDadJoke.Controllers
         public IActionResult Index()
         {
             HomeModel model = new HomeModel(GetRandomDadJoke());
+
             return View(model);
         }
 
         [HttpPost, ValidateAntiForgeryToken]
         public IActionResult Index(string searchTerm)
         {
-            HomeModel model = new HomeModel(GetRandomDadJoke(), searchTerm, GetJokesByTextSearch(searchTerm));
+           JokeSearchResults searchObj = GetJokesByTextSearch(searchTerm);
+            var sortedResults = searchObj.Results.OrderBy(q => q.Joke.Split(' ').Length).ToList();
+            searchObj.Results = sortedResults;
+
+            HomeModel model = new HomeModel(GetRandomDadJoke(), searchTerm, searchObj);
+
             return View(model);
         }
+
 
         [HttpGet]
         public string DadJoke()
@@ -41,18 +49,13 @@ namespace CanIHazDadJoke.Controllers
 
         private JokeSearchResults GetJokesByTextSearch(string searchTerm)
         {
-            var searchClient = new RestClient(BuildJokeSearchRequest(searchTerm));
+            var searchClient = new RestClient($"https://icanhazdadjoke.com/search?page=1&limit=30&term={searchTerm}");
             var searchRequest = new RestRequest("/", Method.GET);
 
             IRestResponse searchResponse = searchClient.Execute(searchRequest);
             var searchResults = JsonConvert.DeserializeObject<JokeSearchResults>(searchResponse.Content);
 
             return searchResults;
-        }
-
-        private string BuildJokeSearchRequest(string searchTerm)
-        {
-            return $"https://icanhazdadjoke.com/search?page=1&limit=30&term={searchTerm}";
         }
     }
 }
