@@ -14,12 +14,6 @@
             this.Joke = joke;
         }
 
-        public HomeModel(string searchTerm, JokeSearchResults searchResults)
-        {
-            this.SearchTerm = searchTerm;
-            this.SearchResults = searchResults;
-        }
-
         public HomeModel(DadJoke joke, string searchTerm, JokeSearchResults searchResults)
         {
             this.Joke = joke;
