@@ -1,3 +1,11 @@
 ﻿body{
     margin: 10%;
 }
+#rotatingJoke{
+    margin: 5%;
+}
+
+#searchForm, #searchResults {
+    width: 100%;
+    margin: 0 auto;
+}
