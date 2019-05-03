@@ -1,10 +1,7 @@
-﻿using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using CanIHazDadJoke.Models;
 using RestSharp;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 
 namespace CanIHazDadJoke.Controllers
 {
@@ -14,12 +11,7 @@ namespace CanIHazDadJoke.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            var joke = GetRandomDadJoke();
-
-            this.HttpContext.Response.Headers.Add("refresh", "10; url=" + Url.Action("index"));
-
-            HomeModel model = new HomeModel(joke);
-
+            HomeModel model = new HomeModel(GetRandomDadJoke());
             return View(model);
         }
 
@@ -27,8 +19,13 @@ namespace CanIHazDadJoke.Controllers
         public IActionResult Index(string searchTerm)
         {
             HomeModel model = new HomeModel(GetRandomDadJoke(), searchTerm, GetJokesByTextSearch(searchTerm));
-
             return View(model);
+        }
+
+        [HttpGet]
+        public string DadJoke()
+        {
+            return GetRandomDadJoke().Joke;
         }
 
         private DadJoke GetRandomDadJoke()
@@ -56,13 +53,6 @@ namespace CanIHazDadJoke.Controllers
         private string BuildJokeSearchRequest(string searchTerm)
         {
             return $"https://icanhazdadjoke.com/search?page=1&limit=30&term={searchTerm}";
-        }
-
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }
