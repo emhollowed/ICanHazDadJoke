@@ -10,8 +10,28 @@ namespace CanIHazDadJoke.Controllers
 {
     public class HomeController : Controller
     {
-       
+
+        [HttpGet]
         public IActionResult Index()
+        {
+            var joke = GetRandomDadJoke();
+
+            this.HttpContext.Response.Headers.Add("refresh", "10; url=" + Url.Action("index"));
+
+            HomeModel model = new HomeModel(joke);
+
+            return View(model);
+        }
+
+        [HttpPost, ValidateAntiForgeryToken]
+        public IActionResult Index(string searchTerm)
+        {
+            HomeModel model = new HomeModel(GetRandomDadJoke(), searchTerm, GetJokesByTextSearch(searchTerm));
+
+            return View(model);
+        }
+
+        private DadJoke GetRandomDadJoke()
         {
             var client = new RestClient("https://icanhazdadjoke.com");
             var request = new RestRequest("/", Method.GET);
@@ -19,22 +39,18 @@ namespace CanIHazDadJoke.Controllers
             IRestResponse response = client.Execute(request);
             var joke = JsonConvert.DeserializeObject<DadJoke>(response.Content);
 
-            this.HttpContext.Response.Headers.Add("refresh", "10; url=" + Url.Action("index"));
-
-            return View();
-           // return View(joke);
+            return joke;
         }
 
-        [HttpPost, ValidateAntiForgeryToken]
-        public IActionResult Index(SearchModel search)
+        private JokeSearchResults GetJokesByTextSearch(string searchTerm)
         {
-            var client = new RestClient(BuildJokeSearchRequest(search.SearchTerm));
-            var request = new RestRequest("/", Method.GET);
+            var searchClient = new RestClient(BuildJokeSearchRequest(searchTerm));
+            var searchRequest = new RestRequest("/", Method.GET);
 
-            IRestResponse response = client.Execute(request);
-            var joke = JsonConvert.DeserializeObject<JokeSearchResults>(response.Content);
+            IRestResponse searchResponse = searchClient.Execute(searchRequest);
+            var searchResults = JsonConvert.DeserializeObject<JokeSearchResults>(searchResponse.Content);
 
-            return View(joke);
+            return searchResults;
         }
 
         private string BuildJokeSearchRequest(string searchTerm)
