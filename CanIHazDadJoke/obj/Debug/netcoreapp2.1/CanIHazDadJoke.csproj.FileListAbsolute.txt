@@ -56,5 +56,3 @@ C:\Users\emhol\GitHubProjects\CanIHazDadJoke\CanIHazDadJoke\obj\Debug\netcoreapp
 C:\Users\emhol\GitHubProjects\CanIHazDadJoke\CanIHazDadJoke\obj\Debug\netcoreapp2.1\CanIHazDadJoke.dll
 C:\Users\emhol\GitHubProjects\CanIHazDadJoke\CanIHazDadJoke\obj\Debug\netcoreapp2.1\CanIHazDadJoke.pdb
 C:\Users\emhol\GitHubProjects\CanIHazDadJoke\CanIHazDadJoke\obj\Debug\netcoreapp2.1\CanIHazDadJoke.csproj.CopyComplete
-C:\Users\emhol\GitHubProjects\CanIHazDadJoke\CanIHazDadJoke\obj\Debug\netcoreapp2.1\Razor\Views\Home\_JokeSearch.g.cshtml.cs
-C:\Users\emhol\GitHubProjects\CanIHazDadJoke\CanIHazDadJoke\obj\Debug\netcoreapp2.1\Razor\Views\Home\_RotatingJokes.g.cshtml.cs

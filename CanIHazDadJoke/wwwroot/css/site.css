@@ -1,3 +1,16 @@
 ﻿body {
-    padding:20%;
+    padding:5%;
 }
+
+#rotatingJokeContainer {
+    margin: 5%;
+}
+
+#rotatingJoke{
+    margin: 2%;
+}
+
+#jokeSearchForm{
+    padding: 2%;
+}
+
