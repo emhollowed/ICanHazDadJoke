@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\emhol\\GitHubProjects\\CanIHazDadJoke\\CanIHazDadJoke.csproj": {}
+    "C:\\Users\\emhol\\GitHubProjects\\CanIHazDadJoke\\CanIHazDadJoke\\CanIHazDadJoke.csproj": {}
   },
   "projects": {
-    "C:\\Users\\emhol\\GitHubProjects\\CanIHazDadJoke\\CanIHazDadJoke.csproj": {
+    "C:\\Users\\emhol\\GitHubProjects\\CanIHazDadJoke\\CanIHazDadJoke\\CanIHazDadJoke.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\emhol\\GitHubProjects\\CanIHazDadJoke\\CanIHazDadJoke.csproj",
+        "projectUniqueName": "C:\\Users\\emhol\\GitHubProjects\\CanIHazDadJoke\\CanIHazDadJoke\\CanIHazDadJoke.csproj",
         "projectName": "CanIHazDadJoke",
-        "projectPath": "C:\\Users\\emhol\\GitHubProjects\\CanIHazDadJoke\\CanIHazDadJoke.csproj",
+        "projectPath": "C:\\Users\\emhol\\GitHubProjects\\CanIHazDadJoke\\CanIHazDadJoke\\CanIHazDadJoke.csproj",
         "packagesPath": "C:\\Users\\emhol\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\emhol\\GitHubProjects\\CanIHazDadJoke\\obj\\",
+        "outputPath": "C:\\Users\\emhol\\GitHubProjects\\CanIHazDadJoke\\CanIHazDadJoke\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
