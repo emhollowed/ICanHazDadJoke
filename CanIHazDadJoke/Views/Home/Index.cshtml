@@ -13,7 +13,16 @@
     {
         <div class="row" id="resultDataRow">
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <p>Count: @Model.SearchResults.TotalJokes</p>
+
+                @if (@Model.SearchResults.TotalJokes > 30)
+                {
+                    <p>Showing: 30/@Model.SearchResults.TotalJokes</p>
+                }
+                else
+                {
+                    <p>Showing: @Model.SearchResults.TotalJokes/@Model.SearchResults.TotalJokes</p>
+                }
+
             </div>
             <div class="col-lg-1 col-md-2 col-sm-2 col-xs-4">
                 <div id="short" class="square">S</div>
