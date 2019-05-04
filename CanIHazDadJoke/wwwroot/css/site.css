@@ -31,27 +31,29 @@
     border-collapse: separate;
 }
 
+#short, #medium, #long {
+    width: 15px;
+    height: 15px;
+}
 
 #short {
     background-color: #ffa600;
-    width: 15px;
-    height: 15px;
 }
 
 #medium {
     background-color: #bc5090;
-    width: 15px;
-    height: 15px;
 }
 
 #long {
     background-color: #003f5c;
-    width: 15px;
-    height: 15px;
 }
 
 #searchInputGroup, #resultDataRow, #searchResultsRow {
-    padding-left: 20%;
-    padding-right: 20%;
+    padding-left: 10%;
+    padding-right: 10%;
     width: 100%;
+}
+
+#searchInputGroup {
+
 }
