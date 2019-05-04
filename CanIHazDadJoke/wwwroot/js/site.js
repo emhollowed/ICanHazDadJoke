@@ -16,6 +16,7 @@ function getRandomJoke() {
 }
 
 $(document).ready(function () {
+
     var searchTerm = document.getElementById("searchInput").defaultValue;
     var jokeElements = document.getElementsByClassName("joke-result");
 

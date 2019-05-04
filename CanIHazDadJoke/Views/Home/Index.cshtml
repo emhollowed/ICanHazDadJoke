@@ -6,7 +6,7 @@
 
     <form class="form-inline md-form form-sm active-cyan-2 mt-2" id="searchForm" asp-action="Index" asp-controller="Home">
         <input class="form-control form-control-sm mr-3 w-75" id="searchInput" type="text" placeholder="Pun Me" aria-label="Search" asp-for="SearchTerm">
-        <i class="fas fa-search" aria-hidden="true"></i>
+        <button id="searchButton" class="fas fa-search" type="submit" aria-hidden="true"></button>
     </form>
 
     @if (Model.SearchResults != null)
