@@ -48,12 +48,14 @@
     background-color: #003f5c;
 }
 
-#searchInputGroup, #resultDataRow, #searchResultsRow {
-    padding-left: 10%;
+#searchForm {
+    padding-left: 25%;
     padding-right: 10%;
     width: 100%;
 }
 
-#searchInputGroup {
-
+#resultDataRow, #searchResultsRow {
+    padding-left: 10%;
+    padding-right: 10%;
+    width: 100%;
 }

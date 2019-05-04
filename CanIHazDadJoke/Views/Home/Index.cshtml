@@ -1,16 +1,12 @@
 ﻿@model CanIHazDadJoke.Models.HomeModel
 
     <div class="container-fluid">
-        
+
         <p class="lead text-center" id="rotatingJoke">@Model.Joke.Joke</p>
 
-        <form class="form-inline"  id="searchForm" asp-action="Index" asp-controller="Home">         
-            <div class="input-group" id="searchInputGroup">
-                <div class="input-group-prepend">
-                    <div class="input-group-text"><span class="fas fa-search" aria-hidden="true"></span></div>
-                </div>
-                <input type="text" class="form-control" id="searchInput" placeholder="Pun Me" asp-for="SearchTerm">
-            </div> 
+        <form class="form-inline md-form form-sm active-cyan-2 mt-2" id="searchForm" asp-action="Index" asp-controller="Home">
+            <input class="form-control form-control-sm mr-3 w-75" id="searchInput" type="text" placeholder="Pun Me" aria-label="Search"  asp-for="SearchTerm">
+            <i class="fas fa-search" aria-hidden="true"></i>
         </form>
 
         @if (Model.SearchResults != null)
