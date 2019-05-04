@@ -18,6 +18,10 @@
                 {
                     <p>Showing: 30/@Model.SearchResults.TotalJokes</p>
                 }
+                else if (@Model.SearchResults.TotalJokes == 0){
+                    <p>Showing : 0/0</p>
+                    <p>No pun intended :(</p>
+                }
                 else
                 {
                     <p>Showing: @Model.SearchResults.TotalJokes/@Model.SearchResults.TotalJokes</p>
