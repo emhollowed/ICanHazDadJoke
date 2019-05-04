@@ -9,3 +9,7 @@
     width: 100%;
     margin: 0 auto;
 }
+
+.highlight{
+    font-weight: bold;
+}

@@ -16,7 +16,7 @@
             <ul class="list-group list-group-flush" id="searchResults">
                 @foreach (var joke in Model.SearchResults.Results)
                 {
-                    <li class="list-group-item">@joke.Joke</li>
+                    <li class="list-group-item joke-result">@joke.Joke</li>
                 }
             </ul>
         }
