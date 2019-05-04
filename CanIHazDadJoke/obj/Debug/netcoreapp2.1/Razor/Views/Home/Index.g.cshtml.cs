@@ -74,12 +74,12 @@ using CanIHazDadJoke.Models;
             WriteLiteral("</p>\r\n\r\n    <div class=\"row\" id=\"searchFormRow\">\r\n        ");
             EndContext();
             BeginContext(199, 335, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1e5e18c6f3fc41b1acb645d6c35c06d9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "41dfa054274740e0bb4ae7159eb8585a", async() => {
                 BeginContext(296, 76, true);
                 WriteLiteral("\r\n            <i class=\"fas fa-search\" aria-hidden=\"true\"></i>\r\n            ");
                 EndContext();
                 BeginContext(372, 145, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "ff0c64cf1b7242cdb0740795769e191f", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "ebf004b552294c9c8aa2b387060b9233", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
