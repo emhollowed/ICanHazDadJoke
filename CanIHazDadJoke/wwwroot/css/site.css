@@ -26,16 +26,6 @@
     color: #003f5c;
 }
 
-#colorLegend {
-    text-align: right;
-    border-collapse: separate;
-}
-
-#short, #medium, #long {
-    width: 15px;
-    height: 15px;
-}
-
 #short {
     background-color: #ffa600;
 }
@@ -54,9 +44,22 @@
     width: 100%;
 }
 
-#resultDataRow, #searchResultsRow {
+#resultDataRow{
     padding-top: 5%;
+}
+
+#resultDataRow, #searchResultsRow {
     padding-left: 10%;
     padding-right: 10%;
     width: 100%;
+}
+
+.square {
+    height: 50px;
+    width: 50px;
+    background-color: #555;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 200%;
 }
