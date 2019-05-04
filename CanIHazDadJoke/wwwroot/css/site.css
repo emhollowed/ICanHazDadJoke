@@ -49,3 +49,15 @@
     width: 15px;
     height: 15px;
 }
+
+#searchInputGroup{
+    padding-left: 10%;
+    padding-right: 10%;
+    width: 100%;
+}
+
+#resultDataRow, #searchResultsRow {
+    padding-left: 10%;
+    padding-right: 10%;
+    width: 100%;
+}

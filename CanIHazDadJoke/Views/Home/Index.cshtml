@@ -1,42 +1,44 @@
 ﻿@model CanIHazDadJoke.Models.HomeModel
 
-<div class="container-fluid">
+    <div class="container-fluid">
+        
+        <p class="lead text-center" id="rotatingJoke">@Model.Joke.Joke</p>
 
-    <p class="lead text-center" id="rotatingJoke">@Model.Joke.Joke</p>
-
-    <div class="row" id="searchFormRow">
-        <form class="form-inline active-cyan-4" id="searchForm" asp-action="Index" asp-controller="Home">
-            <i class="fas fa-search" aria-hidden="true"></i>
-            <input class="form-control form-control-sm ml-3 w-75" id="searchInput" type="text" placeholder="Pun Me" aria-label="Search" asp-for="SearchTerm">
+        <form class="form-inline"  id="searchForm" asp-action="Index" asp-controller="Home">         
+            <div class="input-group" id="searchInputGroup">
+                <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="fas fa-search" aria-hidden="true"></i></div>
+                </div>
+                <input type="text" class="form-control" id="searchInput" placeholder="Pun Me"  aria-label="Search" asp-for="SearchTerm">
+            </div> 
         </form>
-    </div>
 
-    @if (Model.SearchResults != null)
-    {
-        <div class="row">
-            <div class="col-lg-10">
-                <p>Count: @Model.SearchResults.TotalJokes</p>
+        @if (Model.SearchResults != null)
+        {
+            <div class="row" id="resultDataRow">
+                <div class="col-lg-9">
+                    <p>Count: @Model.SearchResults.TotalJokes</p>
+                </div>
+                <div class="col-lg-3">
+                    <table id="colorLegend">
+                        <tr>
+                            <td id="short"></td>
+                            <td>Short</td>
+                            <td id="medium"></td>
+                            <td>Medium</td>
+                            <td id="long"></td>
+                            <td>Long</td>
+                        </tr>
+                    </table>
+                </div>
             </div>
-            <div class="col-lg-2">
-                <table id="colorLegend">
-                    <tr>
-                        <td id="short"></td>
-                        <td>Short</td>
-                        <td id="medium"></td>
-                        <td>Medium</td>
-                        <td id="long"></td>
-                        <td>Long</td>
-                    </tr>
-                </table>
+            <div class="row" id="searchResultsRow">
+                <ul class="list-group list-group-flush" id="searchResults">
+                    @foreach (var joke in Model.SearchResults.Results)
+                    {
+                        <li class="list-group-item joke-result">@joke.Joke</li>
+                    }
+                </ul>
             </div>
-        </div>
-        <div class="row" id="searchResultsRow">
-            <ul class="list-group list-group-flush" id="searchResults">
-                @foreach (var joke in Model.SearchResults.Results)
-                {
-                    <li class="list-group-item joke-result">@joke.Joke</li>
-                }
-            </ul>
-        </div>
-    }
-</div>
+        }
+    </div>
