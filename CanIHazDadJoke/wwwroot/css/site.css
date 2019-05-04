@@ -13,3 +13,39 @@
 .highlight{
     font-weight: bold;
 }
+
+.shortJoke {
+    color: #ffa600;
+}
+
+.mediumJoke {
+    color: #bc5090;
+}
+
+.longJoke {
+    color: #003f5c;
+}
+
+#colorLegend {
+    text-align: right;
+    border-collapse: separate;
+}
+
+
+#short {
+    background-color: #ffa600;
+    width: 15px;
+    height: 15px;
+}
+
+#medium {
+    background-color: #bc5090;
+    width: 15px;
+    height: 15px;
+}
+
+#long {
+    background-color: #003f5c;
+    width: 15px;
+    height: 15px;
+}

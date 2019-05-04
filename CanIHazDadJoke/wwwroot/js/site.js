@@ -21,7 +21,22 @@ $(document).ready(function () {
 
     if (jokeElements.length > 0) {
         for (var x = 0; x < jokeElements.length; x++) {
-            jokeElements[x].innerHTML = highlightSearchTerms(searchTerm, jokeElements[x].innerHTML);
+
+            var currentJoke = jokeElements[x];
+
+            var wordCount = getWordCount(currentJoke.innerText);
+            switch (true) {
+                case wordCount < 10:
+                    currentJoke.classList.add("shortJoke");
+                    break;
+                case wordCount < 20:
+                    currentJoke.classList.add("mediumJoke");
+                    break;
+                default:
+                    currentJoke.classList.add("longJoke");
+            }
+
+            currentJoke.innerHTML = highlightSearchTerms(searchTerm, currentJoke.innerHTML);        
         }
     }
 });
@@ -32,6 +47,12 @@ function highlightSearchTerms(searchTerm, targetJoke) {
 
     return highlightedJoke;
 }
+
+function getWordCount(joke) {
+    var words = joke.trim($("textarea").val()).split(" ");
+    return words.length;
+}
+
 
 
 

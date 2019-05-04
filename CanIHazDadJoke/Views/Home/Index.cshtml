@@ -10,15 +10,36 @@
             <input class="form-control form-control-sm ml-3 w-75" id="searchInput" type="text" placeholder="Pun Me" aria-label="Search" asp-for="SearchTerm">
         </form>
     </div>
-    <div class="row" id="searchResultsRow">
-        @if (Model.SearchResults != null)
-        {
+
+
+
+    @if (Model.SearchResults != null)
+    {
+        <div class="row">
+            <div class="col-lg-10">
+                <p>Count: @Model.SearchResults.TotalJokes</p>
+            </div>
+            <div class="col-lg-2">
+                <table id="colorLegend">
+                    <tr>
+                        <td id="short"></td>
+                        <td>Short</td>
+                        <td id="medium"></td>
+                        <td>Medium</td>
+                        <td id="long"></td>
+                        <td>Long</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="row" id="searchResultsRow">
             <ul class="list-group list-group-flush" id="searchResults">
                 @foreach (var joke in Model.SearchResults.Results)
                 {
                     <li class="list-group-item joke-result">@joke.Joke</li>
                 }
             </ul>
-        }
-    </div>
+        </div>
+    }
+
 </div>
