@@ -74,12 +74,12 @@ using CanIHazDadJoke.Models;
             WriteLiteral("</p>\r\n\r\n    ");
             EndContext();
             BeginContext(153, 344, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1f7b57e9fa364bbc80690d6451098734", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6eb8ce27715248ea9d1784ecb7b14837", async() => {
                 BeginContext(271, 10, true);
                 WriteLiteral("\r\n        ");
                 EndContext();
                 BeginContext(281, 145, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "b65a5160976649c096b898c30717d8f5", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "822a0e500a334908ad4714b1ea64c924", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
